@@ -21,6 +21,9 @@ export	LD=/usr/local/riscv/bin/ld.lld \
 # XXX For some reason MACHINE_ARCH seems to break Makefiles ???
 unset MACHINE_ARCH
 
-# Force RISC-V Compile via CFLAGS
-export CFLAGS="$CFLAGS --target=riscv64-unknown-openbsd6.6 -march=rv64gc"
+# Force RISC-V Compile via AFLAGS & CFLAGS
+riscv64flags="--target=riscv64-unknown-openbsd6.6 -march=rv64gc"
+export AFLAGS="$AFLAGS ${riscv64flags}"
+export CFLAGS="$CFLAGS ${riscv64flags}"
+unset riscv64flags
 
