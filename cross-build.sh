@@ -20,5 +20,8 @@ skipdir="libexec/ld.so"
 COMMON_MAKE_PARAMS="TARGET=${target} CROSSDIR=${destdir} DESTDIR=${destdir} SKIPDIR=\"${skipdir}\""
 unset skipdir
 
+export CFLAGS="$CFLAGS -mno-relax"
+export CXXFLAGS="$CXXFLAGS -mno-relax"
+export AFLAGS="$AFLAGS -mno-relax"
 cd ${srcdir}/$1
-make ${COMMON_MAKE_PARAMS} 
+make -j`sysctl -n hw.ncpu` $2 ${COMMON_MAKE_PARAMS} 
