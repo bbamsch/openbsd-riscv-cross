@@ -22,7 +22,7 @@ export	LD=/usr/local/riscv/bin/ld.lld \
 unset MACHINE_ARCH
 
 # Force RISC-V Compile via AFLAGS & CFLAGS
-riscv64flags="--target=riscv64-unknown-openbsd6.6 -march=rv64gc"
+riscv64flags="--target=riscv64-unknown-openbsd6.6 -march=rv64gc -mcmodel=medany"
 export AFLAGS="$AFLAGS ${riscv64flags}"
 export CFLAGS="$CFLAGS ${riscv64flags}"
 unset riscv64flags
