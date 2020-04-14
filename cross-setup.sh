@@ -2,9 +2,8 @@
 
 . ./env.sh
 
-# Skip directories with build errors
-# XXX TODO: Fix build errors in these directories
-skipdir="libexec/ld.so"
+# Directories to skip
+skipdir=""
 COMMON_MAKE_PARAMS="TARGET=${target} CROSSDIR=${destdir} DESTDIR=${destdir} SKIPDIR=\"${skipdir}\""
 unset skipdir
 
