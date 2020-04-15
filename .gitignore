@@ -1,1 +1,4 @@
 dest.riscv64
+*.a
+*.so
+*.o
