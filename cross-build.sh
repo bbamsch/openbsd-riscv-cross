@@ -17,7 +17,7 @@ fi
 # Skip directories with build errors
 # XXX TODO: Fix build errors in these directories
 skipdir="libexec/ld.so"
-COMMON_MAKE_PARAMS="TARGET=${target} CROSSDIR=${distdir} DESTDIR=${distdir} SKIPDIR=\"${skipdir}\""
+COMMON_MAKE_PARAMS="TARGET=${target} CROSSDIR=${destdir} DESTDIR=${destdir} SKIPDIR=\"${skipdir}\""
 unset skipdir
 
 export CFLAGS="$CFLAGS -mno-relax"
