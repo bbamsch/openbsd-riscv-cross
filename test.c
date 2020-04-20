@@ -1,7 +1,8 @@
-#include <stdio.h>
 
 int
 main() {
-	printf("Hello, world!");
+	__asm __volatile(
+		"li	t0, 47; /* getgid */	"\
+		"ecall;");
 	return 0;
 }
