@@ -15,9 +15,7 @@ if [[ ! -d "${srcdir}/$1" ]]; then
 fi
 
 # Skip directories with build errors
-# XXX TODO: Fix build errors in these directories
-skipdir="libexec/ld.so"
-COMMON_MAKE_PARAMS="TARGET=${target} CROSSDIR=${destdir} DESTDIR=${destdir} SKIPDIR=\"${skipdir}\""
+COMMON_MAKE_PARAMS="TARGET=${target} CROSSDIR=${destdir} DESTDIR=${destdir}"
 unset skipdir
 
 export CFLAGS="$CFLAGS -mno-relax"
